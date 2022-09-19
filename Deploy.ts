@@ -1,11 +1,15 @@
-const ethers = require("ethers")
-const fs = require("fs-extra")
-require("dotenv").config()
+// const ethers = require("ethers")
+// const fs = require("fs-extra")
+// require("dotenv").config()
+
+import {ethers} from "ethers"
+import * as fs from "fs-extra"
+import "dotenv/config"
 
 async function main() {
   //http://127.0.0.1:7545
-  const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
-  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
+  const provider = new ethers.providers.JsonRpcProvider(process.env.GANACHE_RPC_URL!)
+  const wallet = new ethers.Wallet(process.env.GANACHE_PRIVATE_KEY!, provider)
   // const encryptJson = fs.readFileSync("./.encryptedKey.json", "utf-8");
   // let wallet = new ethers.Wallet.fromEncryptedJsonSync(
   //   encryptJson,
